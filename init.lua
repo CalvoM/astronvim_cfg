@@ -26,7 +26,7 @@ local config = {
   },
 
   -- Set colorscheme to use
-  colorscheme = "default_theme",
+  colorscheme = "tokyonight-storm",
 
   -- Add highlight groups in any theme
   highlights = {
@@ -216,6 +216,8 @@ local config = {
   -- Configure plugins
   plugins = {
     init = {
+        {"folke/tokyonight.nvim"},
+        {"sainhe/sonokai"},
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
 
