@@ -6,7 +6,7 @@ return {
     { "mfussenegger/nvim-dap" },
     { "folke/tokyonight.nvim" },
     { "nvim-lualine/lualine.nvim",
-        requires = { 'kyazdani42/nvim-web-devicons', opt = false },
+        requires = { { 'kyazdani42/nvim-web-devicons', opt = false }, 'nvim-lua/lsp-status.nvim' },
         module = "lualine",
         opt = false,
         config = require "user.plugins.lualine",
