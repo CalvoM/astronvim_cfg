@@ -1,8 +1,8 @@
 return {
         window = {
                 mappings = {
-                        ["p"] = { "toggle_preview", config = { use_float = true } },
-                        ["O"] = "open",
+                        ["P"] = { "toggle_preview", config = { use_float = true } },
+                        ["o"] = "open",
                 },
         },
         filesystem = {

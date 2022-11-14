@@ -7,14 +7,9 @@ return {
     { "folke/tokyonight.nvim" },
     { "nvim-lualine/lualine.nvim",
         requires = { 'kyazdani42/nvim-web-devicons', opt = false },
+        module = "lualine",
         opt = false,
-        config = function()
-            require("lualine").setup {
-                options = {
-                    theme = "aurora",
-                }
-            }
-        end,
+        config = require "user.plugins.lualine",
     },
     ["ray-x/lsp_signature.nvim"] = {
         event = "BufRead",
@@ -27,21 +22,6 @@ return {
         end,
     },
     ["wakatime/vim-wakatime"] = { event = "BufEnter" },
-    ["neo-tree"] = {
-        window = {
-            mappings = {
-                ["p"] = { "toggle_preview", config = { use_float = true } },
-                ["O"] = "open",
-            },
-        },
-        filesystem = {
-            filtered_items = {
-                hide_dotfiles = false,
-                hide_gitignored = false,
-                hide_hidden = false
-            },
-        },
-    },
     { "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
         config = function()
