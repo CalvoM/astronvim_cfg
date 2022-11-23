@@ -1,2 +1,2 @@
-  -- Set colorscheme to use
-return "aurora"
+-- Set colorscheme to use
+return "duskfox"

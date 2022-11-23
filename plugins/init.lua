@@ -1,8 +1,14 @@
 return {
     { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } },
-    { "vim-airline/vim-airline-themes" },
     { "wfxr/minimap.vim" },
+    { "HiPhish/jinja.vim" },
+    {
+        's1n7ax/nvim-search-and-replace',
+        config = function() require 'nvim-search-and-replace'.setup() end,
+    },
+    { "xiyaowong/nvim-transparent" },
     { 'f-person/git-blame.nvim' },
+    { "EdenEast/nightfox.nvim" },
     { "mfussenegger/nvim-dap" },
     { "folke/tokyonight.nvim" },
     { "nvim-lualine/lualine.nvim",
