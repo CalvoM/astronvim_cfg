@@ -1,5 +1,7 @@
 return {
+    { "eandrju/cellular-automaton.nvim" },
     { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } },
+    { 'Wansmer/treesj', requires = { 'nvim-treesitter' } },
     { "wfxr/minimap.vim" },
     { "HiPhish/jinja.vim" },
     {
