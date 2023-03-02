@@ -10,7 +10,17 @@ return {
             }
         end
     },
-    { 'lalitmee/cobalt2.nvim',       requires = 'tjdevries/colorbuddy.nvim' },
+    {'tjdevries/colorbuddy.nvim', 
+        config = false,
+        lazy = false,
+    },
+    { 'lalitmee/cobalt2.nvim',
+        requires = 'tjdevries/colorbuddy.nvim',
+        lazy = false,
+        config = function()
+        require("colorbuddy").colorscheme "cobalt2"
+      end,
+    },
     { 'preservim/tagbar' },
     { 'projekt0n/github-nvim-theme', tag = 'v0.0.7' },
     { "AlexvZyl/nordic.nvim" },
@@ -27,12 +37,6 @@ return {
     { "EdenEast/nightfox.nvim" },
     { "mfussenegger/nvim-dap" },
     { "folke/tokyonight.nvim" },
-    { "nvim-lualine/lualine.nvim",
-        requires = { { 'kyazdani42/nvim-web-devicons', opt = false }, 'nvim-lua/lsp-status.nvim' },
-        module = "lualine",
-        opt = false,
-        config = require "user.plugins.lualine",
-    },
     ["ray-x/lsp_signature.nvim"] = {
         event = "BufRead",
         opt = false,

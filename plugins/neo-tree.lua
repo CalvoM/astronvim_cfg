@@ -1,4 +1,6 @@
 return {
+        "nvim-neo-tree/neo-tree.nvim",
+        opt = {
         window = {
                 mappings = {
                         ["P"] = { "toggle_preview", config = { use_float = true } },
@@ -12,4 +14,6 @@ return {
                         hide_hidden = false
                 },
         },
+
+        }
 }

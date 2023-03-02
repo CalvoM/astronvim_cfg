@@ -1,4 +1,9 @@
-return function()
+return {
+    "nvim-lualine/lualine.nvim",
+    requires = { { 'kyazdani42/nvim-web-devicons', opt = false }, 'nvim-lua/lsp-status.nvim' },
+    module = "lualine",
+    opt = false,
+    config = function()
     local conditions = {
         buffer_not_empty = function()
             return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
@@ -112,3 +117,4 @@ return function()
         },
     }
 end
+}
