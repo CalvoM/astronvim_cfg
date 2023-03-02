@@ -1,2 +1,2 @@
 -- Set colorscheme to use
-return "duskfox"
+return "github_dark_default"

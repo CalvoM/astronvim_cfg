@@ -1,4 +1,7 @@
 return {
+    { 'preservim/tagbar' },
+    { 'projekt0n/github-nvim-theme', tag = 'v0.0.7' },
+    { "AlexvZyl/nordic.nvim" },
     { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } },
     { 'Wansmer/treesj', requires = { 'nvim-treesitter' } },
     { "wfxr/minimap.vim" },

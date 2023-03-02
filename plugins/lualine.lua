@@ -30,7 +30,7 @@ return function()
     }
     require('lualine').setup {
         options = {
-            theme = 'dracula',
+            theme = 'nordic',
             component_separators = '|',
             -- section_separators = { left = ' ', right = ' ' },
         },
