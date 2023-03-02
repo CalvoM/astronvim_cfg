@@ -1,2 +1,4 @@
 -- Set colorscheme to use
-return "github_dark_default"
+
+require('colorbuddy').colorscheme('cobalt2')
+return "cobalt2"

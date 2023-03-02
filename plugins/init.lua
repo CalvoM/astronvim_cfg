@@ -1,9 +1,21 @@
 return {
+    {
+        "folke/trouble.nvim",
+        requires = "nvim-tree/nvim-web-devicons",
+        config = function()
+            require("trouble").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    },
+    { 'lalitmee/cobalt2.nvim',       requires = 'tjdevries/colorbuddy.nvim' },
     { 'preservim/tagbar' },
     { 'projekt0n/github-nvim-theme', tag = 'v0.0.7' },
     { "AlexvZyl/nordic.nvim" },
-    { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } },
-    { 'Wansmer/treesj', requires = { 'nvim-treesitter' } },
+    { "rcarriga/nvim-dap-ui",        requires = { "mfussenegger/nvim-dap" } },
+    { 'Wansmer/treesj',              requires = { 'nvim-treesitter' } },
     { "wfxr/minimap.vim" },
     { "HiPhish/jinja.vim" },
     {
