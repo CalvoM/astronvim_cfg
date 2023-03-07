@@ -33,7 +33,7 @@ return {
         config = function() require 'nvim-search-and-replace'.setup() end,
     },
     { "xiyaowong/nvim-transparent" },
-    { 'f-person/git-blame.nvim' },
+    { 'f-person/git-blame.nvim', lazy=false, },
     { "EdenEast/nightfox.nvim" },
     { "mfussenegger/nvim-dap" },
     { "folke/tokyonight.nvim" },
