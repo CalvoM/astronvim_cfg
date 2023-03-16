@@ -1,3 +1,3 @@
 -- Set colorscheme to use
 
-return "bluloco-dark"
+return "noctis"

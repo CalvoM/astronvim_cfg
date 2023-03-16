@@ -1,7 +1,7 @@
 return {
     {
         "folke/trouble.nvim",
-        requires = "nvim-tree/nvim-web-devicons",
+        dependencies = "nvim-tree/nvim-web-devicons",
         config = function()
             require("trouble").setup {
                 -- your configuration comes here
@@ -15,8 +15,8 @@ return {
         lazy = false,
     },
     { 'preservim/tagbar', lazy=false, event="BufEnter"},
-    { "rcarriga/nvim-dap-ui",        requires = { "mfussenegger/nvim-dap" }, lazy=false,},
-    { 'Wansmer/treesj',              requires = { 'nvim-treesitter' }, lazy=false },
+    { "rcarriga/nvim-dap-ui",        dependencies = { "mfussenegger/nvim-dap" }, lazy=false,},
+    { 'Wansmer/treesj',              dependencies = { 'nvim-treesitter' }, lazy=false },
     { "wfxr/minimap.vim", lazy=false, },
     { "HiPhish/jinja.vim", lazy=false,},
     {
@@ -24,17 +24,7 @@ return {
         lazy = false,
         config = function() require 'nvim-search-and-replace'.setup() end,
     },
-    {'folke/tokyonight.nvim', lazy=false},
-    {
-  'uloco/bluloco.nvim',
-  lazy = false,
-  priority = 1000,
-  dependencies = { 'rktjmp/lush.nvim' },
-  config = function()
-    -- your optional config goes here, see below.
-  end,
-},
-    {"savq/melange-nvim", lazy=false},
+    { 'kartikp10/noctis.nvim', dependencies = { 'rktjmp/lush.nvim' }, lazy = false },
     { "xiyaowong/nvim-transparent", lazy=false, },
     { 'f-person/git-blame.nvim', lazy=false, },
     { "mfussenegger/nvim-dap", lazy=false},
