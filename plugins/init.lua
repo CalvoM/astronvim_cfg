@@ -14,16 +14,7 @@ return {
         config = false,
         lazy = false,
     },
-    { 'lalitmee/cobalt2.nvim',
-        requires = 'tjdevries/colorbuddy.nvim',
-        lazy = false,
-        config = function()
-        require("colorbuddy").colorscheme "cobalt2"
-      end,
-    },
-    { 'preservim/tagbar', lazy=false,},
-    { 'projekt0n/github-nvim-theme', tag = 'v0.0.7' },
-    { "AlexvZyl/nordic.nvim" },
+    { 'preservim/tagbar', lazy=false, event="BufEnter"},
     { "rcarriga/nvim-dap-ui",        requires = { "mfussenegger/nvim-dap" }, lazy=false,},
     { 'Wansmer/treesj',              requires = { 'nvim-treesitter' }, lazy=false },
     { "wfxr/minimap.vim", lazy=false, },
@@ -33,11 +24,20 @@ return {
         lazy = false,
         config = function() require 'nvim-search-and-replace'.setup() end,
     },
+    {'folke/tokyonight.nvim', lazy=false},
+    {
+  'uloco/bluloco.nvim',
+  lazy = false,
+  priority = 1000,
+  dependencies = { 'rktjmp/lush.nvim' },
+  config = function()
+    -- your optional config goes here, see below.
+  end,
+},
+    {"savq/melange-nvim", lazy=false},
     { "xiyaowong/nvim-transparent", lazy=false, },
     { 'f-person/git-blame.nvim', lazy=false, },
-    { "EdenEast/nightfox.nvim" },
     { "mfussenegger/nvim-dap", lazy=false},
-    { "folke/tokyonight.nvim" },
     ["ray-x/lsp_signature.nvim"] = {
         event = "BufRead",
         lazy = false,
