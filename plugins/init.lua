@@ -26,7 +26,7 @@ return {
         config = function() require 'nvim-search-and-replace'.setup() end,
     },
     { 'kartikp10/noctis.nvim',      dependencies = { 'rktjmp/lush.nvim' }, lazy = false },
-    { "xiyaowong/nvim-transparent", lazy = false, },
+    { "xiyaowong/nvim-transparent", lazy = true, },
     { 'f-person/git-blame.nvim',    lazy = false, },
     { "mfussenegger/nvim-dap",      lazy = false },
     ["ray-x/lsp_signature.nvim"] = {
@@ -40,7 +40,9 @@ return {
             }
         end,
     },
-    ["wakatime/vim-wakatime"] = { event = "BufEnter" },
+    { 'luisiacc/gruvbox-baby', },
+    { "ellisonleao/gruvbox.nvim" },
+    { "wakatime/vim-wakatime",        event = "BufEnter", lazy = true },
     { "IndianBoy42/tree-sitter-just", lazy = false },
     {
         "folke/todo-comments.nvim",
@@ -53,5 +55,21 @@ return {
                 -- refer to the configuration section below
             }
         end,
-    }
+    },
+    {
+  "folke/noice.nvim",
+  config = function()
+    require("noice").setup({
+        -- add any options here
+    })
+  end,
+  requires = {
+    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    "MunifTanjim/nui.nvim",
+    -- OPTIONAL:
+    --   `nvim-notify` is only needed, if you want to use the notification view.
+    --   If not available, we use `mini` as the fallback
+    "rcarriga/nvim-notify",
+    }, lazy=false,
+},
 }

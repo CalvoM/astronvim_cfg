@@ -38,7 +38,6 @@ local config = {
       },
     },
   },
-
   -- This function is run last and is a good place to configuring
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
@@ -46,6 +45,12 @@ local config = {
     vim.api.nvim_create_autocmd("BufEnter", {
       command = "TagbarOpen"
     })
+    if vim.g.neovide then
+      vim.o.guifont = "FantasqueSansMono_Nerd_Font_Mono,Fira_Code:h10"
+      vim.g.neovide_cursor_vfx_mode = "railgun"
+      vim.g.neovide_scroll_animation_length = 0.4
+      vim.g.neovide_fullscreen = true
+    end
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
