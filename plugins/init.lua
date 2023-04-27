@@ -1,6 +1,7 @@
 return {
     {
         "folke/trouble.nvim",
+        lazy = false,
         dependencies = "nvim-tree/nvim-web-devicons",
         config = function()
             require("trouble").setup {
@@ -10,15 +11,9 @@ return {
             }
         end
     },
-    {
-        'tjdevries/colorbuddy.nvim',
-        config = false,
-        lazy = false,
-    },
     { 'preservim/tagbar',     lazy = false,                               event = "BufEnter" },
     { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" }, lazy = false, },
     { 'Wansmer/treesj',       dependencies = { 'nvim-treesitter' },       lazy = false },
-    { "wfxr/minimap.vim",     lazy = false, },
     { "HiPhish/jinja.vim",    lazy = false, },
     {
         's1n7ax/nvim-search-and-replace',
@@ -40,9 +35,19 @@ return {
             }
         end,
     },
-    { 'luisiacc/gruvbox-baby', },
-    { "catppuccin/nvim",              as = "catppuccin",  lazy = false },
-    { "ellisonleao/gruvbox.nvim" },
+    {
+        "utilyre/barbecue.nvim",
+        name = "barbecue",
+        version = "*",
+        lazy = false,
+        dependencies = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
+        opts = {
+            -- configurations go here
+        },
+    },
     { "wakatime/vim-wakatime",        event = "BufEnter", lazy = true },
     { "IndianBoy42/tree-sitter-just", lazy = false },
     {
@@ -74,4 +79,28 @@ return {
         },
         lazy = false,
     },
+    {
+        'kosayoda/nvim-lightbulb',
+        dependencies = { 'antoinemadec/FixCursorHold.nvim' },
+        lazy = false,
+    },
+    {
+        'pwntester/octo.nvim',
+        lazy = false,
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim',
+            'nvim-tree/nvim-web-devicons',
+        },
+        config = function()
+            require "octo".setup()
+        end
+    },
+    {
+        "klen/nvim-test",
+        lazy = false,
+        config = function()
+            require('nvim-test').setup()
+        end
+    }
 }
