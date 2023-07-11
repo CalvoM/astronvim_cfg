@@ -20,7 +20,12 @@ return {
         lazy = false,
         config = function() require 'nvim-search-and-replace'.setup() end,
     },
-    { 'kartikp10/noctis.nvim',      dependencies = { 'rktjmp/lush.nvim' }, lazy = false },
+    {
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
+},
     { "xiyaowong/nvim-transparent", lazy = true, },
     { 'f-person/git-blame.nvim',    lazy = false, },
     { "mfussenegger/nvim-dap",      lazy = false },
