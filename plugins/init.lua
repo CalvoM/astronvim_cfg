@@ -11,7 +11,7 @@ return {
             }
         end
     },
-    { 'preservim/tagbar',     lazy = false,                               event = "BufEnter" },
+    { 'preservim/tagbar',     lazy = false,                               event = "LspAttach" },
     { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" }, lazy = false, },
     { 'Wansmer/treesj',       dependencies = { 'nvim-treesitter' },       lazy = false },
     { "HiPhish/jinja.vim",    lazy = false, },
@@ -39,19 +39,6 @@ return {
                 timer_interval = 90,
             }
         end,
-    },
-    {
-        "utilyre/barbecue.nvim",
-        name = "barbecue",
-        version = "*",
-        lazy = false,
-        dependencies = {
-            "SmiteshP/nvim-navic",
-            "nvim-tree/nvim-web-devicons", -- optional dependency
-        },
-        opts = {
-            -- configurations go here
-        },
     },
     { "wakatime/vim-wakatime",        event = "BufEnter", lazy = true },
     { "IndianBoy42/tree-sitter-just", lazy = false },
