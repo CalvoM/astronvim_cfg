@@ -11,7 +11,6 @@ return {
             }
         end
     },
-    { 'preservim/tagbar',     lazy = false,                               event = "LspAttach" },
     { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" }, lazy = false, },
     { 'Wansmer/treesj',       dependencies = { 'nvim-treesitter' },       lazy = false },
     { "HiPhish/jinja.vim",    lazy = false, },
@@ -25,6 +24,10 @@ return {
   lazy = false,
   priority = 1000,
   opts = {},
+},
+{
+  "olimorris/onedarkpro.nvim",
+  priority = 1000 -- Ensure it loads first
 },
     { "xiyaowong/nvim-transparent", lazy = true, },
     { 'f-person/git-blame.nvim',    lazy = false, },
@@ -94,5 +97,28 @@ return {
         config = function()
             require('nvim-test').setup()
         end
+    },
+    {
+        'iamcco/markdown-preview.nvim',
+        lazy = false,
+    },
+    {
+        'linux-cultist/venv-selector.nvim',
+  dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim', 'mfussenegger/nvim-dap-python' },
+  opts = {
+    -- Your options go here
+    -- name = "venv",
+    -- auto_refresh = false
+    parent = 1,
+    auto_refresh = true,
+    name = {"venv", ".venv"}
+  },
+  event = 'VeryLazy', -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+  keys = {
+    -- Keymap to open VenvSelector to pick a venv.
+    { '<leader>vs', '<cmd>VenvSelect<cr>' },
+    -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
+    { '<leader>vc', '<cmd>VenvSelectCached<cr>' },
+  },
     }
 }

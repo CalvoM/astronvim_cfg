@@ -1,3 +1,3 @@
 -- Set colorscheme to use
 
-return "tokyonight-storm"
+return "onedark_vivid"

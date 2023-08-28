@@ -26,17 +26,12 @@ return {
         diagnostics_enabled = true,        -- enable diagnostics at start
         status_diagnostics_enabled = true, -- enable diagnostics in statusline
         icons_enabled = true,              -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
-        aurora_italic = 1,
-        aurora_bold = 1,
-        aurora_darker = 1,
-        aurora_transparent = 1,
         gitblame_message_when_not_committed = "Buda, bado hujacommit?!!!",
         minimap_width = 10,
         minimap_highlight_search = 1,
         minimap_git_colors = 1,
         minimap_search_color_priority = 150,
-        gruvbox_baby_background_color = "dark",
-        -- transparent_enabled = true,
+        transparent_enabled = false,
     },
 }
 
