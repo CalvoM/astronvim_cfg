@@ -11,7 +11,6 @@ return {
             }
         end
     },
-    { 'preservim/tagbar',     lazy = false,                               event = "LspAttach" },
     { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" }, lazy = false, },
     { 'Wansmer/treesj',       dependencies = { 'nvim-treesitter' },       lazy = false },
     { "HiPhish/jinja.vim",    lazy = false, },
@@ -94,5 +93,9 @@ return {
         config = function()
             require('nvim-test').setup()
         end
+    },
+    {
+        'iamcco/markdown-preview.nvim',
+        lazy = false,
     }
 }
