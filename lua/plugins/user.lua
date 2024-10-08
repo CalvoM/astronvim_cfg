@@ -12,6 +12,7 @@ return {
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
+    lazy = false,
     config = function() require("lsp_signature").setup() end,
   },
 
@@ -95,24 +96,12 @@ return {
     end,
   },
   { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" }, lazy = false },
-  { "Wansmer/treesj", dependencies = { "nvim-treesitter" }, lazy = false },
   { "HiPhish/jinja.vim", lazy = false },
   {
     "s1n7ax/nvim-search-and-replace",
     lazy = false,
     config = function() require("nvim-search-and-replace").setup() end,
   },
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
-  {
-    "olimorris/onedarkpro.nvim",
-    priority = 1000, -- Ensure it loads first
-  },
-  { "xiyaowong/nvim-transparent", lazy = true },
   { "f-person/git-blame.nvim", lazy = false },
   { "mfussenegger/nvim-dap", lazy = false },
   ["ray-x/lsp_signature.nvim"] = {
@@ -127,7 +116,6 @@ return {
     end,
   },
   { "wakatime/vim-wakatime", event = "BufEnter", lazy = true },
-  { "IndianBoy42/tree-sitter-just", lazy = false },
   {
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
@@ -146,31 +134,12 @@ return {
     lazy = false,
   },
   {
-    "klen/nvim-test",
-    lazy = false,
-    config = function() require("nvim-test").setup() end,
-  },
-  {
     "iamcco/markdown-preview.nvim",
     lazy = false,
   },
   {
-    "linux-cultist/venv-selector.nvim",
-    dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
-    opts = {
-      -- Your options go here
-      -- name = "venv",
-      -- auto_refresh = false
-      parent = 1,
-      auto_refresh = true,
-      name = { "venv", ".venv" },
-    },
-    event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
-    keys = {
-      -- Keymap to open VenvSelector to pick a venv.
-      { "<leader>vs", "<cmd>VenvSelect<cr>" },
-      -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
-      { "<leader>vc", "<cmd>VenvSelectCached<cr>" },
-    },
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    lazy = false,
   },
 }
