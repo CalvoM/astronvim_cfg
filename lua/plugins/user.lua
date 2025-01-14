@@ -34,7 +34,7 @@ return {
     end,
   },
   { "f-person/git-blame.nvim", lazy = false },
-  { "mfussenegger/nvim-dap", lazy = false },
+  { "mfussenegger/nvim-dap", lazy = false, config = function() end },
   ["ray-x/lsp_signature.nvim"] = {
     event = "BufRead",
     lazy = false,
@@ -80,5 +80,17 @@ return {
     config = function()
       require("image_preview").setup()
     end,
+  },
+  {
+    "rest-nvim/rest.nvim",
+    lazy = true,
+    ft = "http",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        table.insert(opts.ensure_installed, "http")
+      end,
+    },
   },
 }
