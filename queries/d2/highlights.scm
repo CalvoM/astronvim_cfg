@@ -24,7 +24,6 @@
 
 (escape) @string.escape
 
-
 (identifier) @function
 ((identifier) @function.builtin
   (#any-of? @function.builtin
@@ -70,10 +69,22 @@
   )
 )
 
+((identifier) @keyword
+  (#eq? @keyword "_")
+)
+
 [
  "$"
  "...$"
 ] @keyword
+
+[
+ (glob_filter)
+ (inverse_glob_filter)
+ (visibility_mark)
+] @keyword.modifier
+
+(import) @keyword
 
 [(variable) (spread_variable)] @variable
 
@@ -97,8 +108,6 @@
 (integer) @number
 (float) @number.float
 (boolean) @boolean
-
-(import) @module
 
 (argument_name) @variable.parameter
 (argument_type) @type
