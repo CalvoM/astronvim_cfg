@@ -1,20 +1,8 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
--- You can also add or configure plugins by creating files in this `plugins/` folder
--- Here are some examples:
-
 return {
-
-  -- You can disable default plugins as follows:
-  { "max397574/better-escape.nvim", enabled = false },
-
-  -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
-  {
-    "tpope/vim-fugitive",
-  },
   {
     "folke/trouble.nvim",
-    lazy = false,
+    lazy = true,
+    event = "BufEnter",
     dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
       require("trouble").setup({
@@ -24,20 +12,12 @@ return {
       })
     end,
   },
-  { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" }, lazy = false },
-  { "HiPhish/jinja.vim", lazy = false },
-  {
-    "s1n7ax/nvim-search-and-replace",
-    lazy = false,
-    config = function()
-      require("nvim-search-and-replace").setup()
-    end,
-  },
-  { "f-person/git-blame.nvim", lazy = false },
-  { "mfussenegger/nvim-dap", lazy = false, config = function() end },
+  { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }, lazy = true },
+  { "f-person/git-blame.nvim", lazy = true, event = "BufEnter" },
+  { "mfussenegger/nvim-dap", lazy = true, config = function() end },
   ["ray-x/lsp_signature.nvim"] = {
     event = "BufRead",
-    lazy = false,
+    lazy = true,
     opt = false,
     config = function()
       require("lsp_signature").setup({
@@ -50,7 +30,8 @@ return {
   {
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
-    lazy = false,
+    lazy = true,
+    event = "BufEnter",
     config = function()
       require("todo-comments").setup({
         -- your configuration comes here
@@ -62,16 +43,18 @@ return {
   {
     "kosayoda/nvim-lightbulb",
     dependencies = { "antoinemadec/FixCursorHold.nvim" },
-    lazy = false,
+    lazy = true,
+    event = "BufEnter",
   },
   {
     "iamcco/markdown-preview.nvim",
-    lazy = false,
+    lazy = true,
+    ft = "md",
   },
   {
     "ellisonleao/gruvbox.nvim",
-    priority = 1000,
-    lazy = false,
+    priority = 50,
+    lazy = true,
   },
   { "neoclide/coc.nvim", branch = "release" },
   {
@@ -94,8 +77,19 @@ return {
     },
   },
   {
-    "NStefan002/screenkey.nvim",
+    "olimorris/onedarkpro.nvim",
+    priority = 1000, -- Ensure it loads first
     lazy = false,
-    version = "*", -- or branch = "dev", to use the latest commit
+  },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    lazy = true,
+    ft = "md",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
   },
 }

@@ -1,0 +1,22 @@
+return {}
+--   {
+--     "neovim/nvim-lspconfig",
+--     opts = {
+--       setup = {
+--         d2lsp = function(_, opts)
+--           opts.init_options = {
+--             plugins = {
+--               {
+--                 name = "d2lsp",
+--                 location = "/home/d1r3ct0r/Coding/Projects/d2-lsp/main",
+--                 languages = { "d2" },
+--               },
+--             },
+--           }
+--           opts.fileytpes = { "d2" }
+--         end,
+--       },
+--       servers = { d2lsp = {} },
+--     },
+--   },
+-- }
