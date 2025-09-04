@@ -51,11 +51,6 @@ return {
     lazy = true,
     ft = "md",
   },
-  {
-    "ellisonleao/gruvbox.nvim",
-    priority = 50,
-    lazy = true,
-  },
   { "neoclide/coc.nvim", branch = "release" },
   {
     "adelarsq/image_preview.nvim",
@@ -77,10 +72,16 @@ return {
     },
   },
   {
-    "olimorris/onedarkpro.nvim",
-    priority = 1000, -- Ensure it loads first
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
     lazy = false,
   },
+  {
+    "olimorris/onedarkpro.nvim",
+    priority = 1000, -- Ensure it loads first
+    lazy = true,
+  },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000, lazy = true },
   {
     "MeanderingProgrammer/render-markdown.nvim",
     lazy = true,
@@ -89,7 +90,20 @@ return {
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     ---@module 'render-markdown'
-    ---@type render.md.UserConfig
+    ---@type rendefr.md.UserConfig
     opts = {},
+  },
+  {
+    "nvzone/typr",
+    lazy = true,
+    dependencies = "nvzone/volt",
+    opts = {},
+    cmd = { "Typr", "TyprStats" },
+  },
+  {
+    "SmiteshP/nvim-navic",
+    dependencies = "neovim/nvim-lspconfig",
+    event = "BufEnter",
+    lazy = false,
   },
 }
