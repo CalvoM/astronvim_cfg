@@ -6,3 +6,4 @@ vim.opt.tabstop = 4
 vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.lazyvim_prettier_needs_config = true
 vim.g.material_style = "oceanic"
+vim.g.lazyvim_php_lsp = "intelephense"
