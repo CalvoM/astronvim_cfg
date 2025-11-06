@@ -52,20 +52,20 @@ require("lazy").setup({
   },
 })
 
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.d2 = {
-  install_info = {
-    url = "https://github.com/CalvoM/tree-sitter-d2",
-    files = { "src/parser.c" },
-    branch = "fix_better_import_parsing_tests",
-  },
-  filetype = "d2",
-}
-
--- in case `echo &filetype` is empty on *.d2
--- so we need to add auto set ft=d2 on *.d2 files
-vim.filetype.add({
-  extension = {
-    d2 = "d2",
-  },
-})
+-- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+-- parser_config.d2 = {
+--   install_info = {
+--     url = "https://github.com/CalvoM/tree-sitter-d2",
+--     files = { "src/parser.c" },
+--     branch = "fix_better_import_parsing_tests",
+--   },
+--   filetype = "d2",
+-- }
+--
+-- -- in case `echo &filetype` is empty on *.d2
+-- -- so we need to add auto set ft=d2 on *.d2 files
+-- vim.filetype.add({
+--   extension = {
+--     d2 = "d2",
+--   },
+-- })
