@@ -9,7 +9,7 @@ vim.g.material_style = "oceanic"
 vim.g.lazyvim_php_lsp = "intelephense"
 vim.g.lazyvim_eslint_auto_format = false
 vim.opt.shortmess:append("c") -- skip completion messages
-vim.opt.lazyredraw = true
+vim.opt.lazyredraw = false
 vim.opt.synmaxcol = 240 -- avoid syntax highlighting deep lines
 vim.opt.updatetime = 300
 vim.opt.ttimeoutlen = 10
